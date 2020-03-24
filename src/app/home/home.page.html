@@ -1,0 +1,83 @@
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <button onclick="addItem()"> store</button>
+
+            EMM-Demo / {{appStatus}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+        <ion-list *ngIf="appStatus ==_AppStatus.SCAN">
+            <ion-list-header>
+                <ion-label>EMM BLE Deveice List</ion-label>
+            </ion-list-header>
+            <ion-item *ngIf="!datas">
+                <p>等待裝置回應...</p>
+            </ion-item>
+            <ion-item *ngIf="datas?.length === 0">
+                <p>掃描不到EMM裝置</p>
+            </ion-item>
+            <ion-item *ngFor="let item of datas;let i = index">
+                <ion-text>
+                    <p><span *ngIf="item.isEmmaDevice">EmmaDevice</span> #{{i+1}}-{{item.id}} </p>
+                    <p>RSSI : {{item.rssi}}</p>
+                    <p>{{item.timestamp | date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+                </ion-text>
+                <ion-button fill="outline" slot="end" (click)="connect(item)">Connect</ion-button>
+            </ion-item>
+        </ion-list>
+
+        <div *ngIf="appStatus ==_AppStatus.CONNECTION">
+            <ion-item>連線等待回應中...</ion-item>
+        </div>
+        <div *ngIf="appStatus ==_AppStatus.TALKING">
+            <ion-item>
+                <p>BorecastName:{{connectedDevice?.name}}</p>
+            </ion-item>
+            <ion-item>
+                <p>DeviceName:{{connectedDevice?.id}}</p>
+            </ion-item>
+            <ion-item>
+                <ion-segment [(ngModel)]="currentCmdMode" (ionChange)="setMode(currentCmdMode)">
+                    <ion-segment-button value="0" checked>
+                        <ion-label>待機模式</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="100">
+                        <ion-label>傳輸數據模式(100ms)</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+            </ion-item>
+            <ion-item>
+                <ion-button (click)="sleepMode()">休眠狀態(Disconnect)</ion-button>
+            </ion-item>
+
+            <!-- <ion-button (click)="DFUMode()">DFU Mode</ion-button> -->
+
+            <ion-card>
+                <ion-card-content>
+                    <p>Recevied Date: {{currentEmmData?.timeStamp | date: 'MM-dd HH:mm:ss.SSS'}}</p>
+                    <p>X:{{currentEmmData?.x | number}}</p>
+                    <p>Y:{{currentEmmData?.y | number}}</p>
+                    <p>Z:{{currentEmmData?.z |number}}</p>
+                    <p>BatVolt:{{batVolt}}</p>
+                    <p>{{emmSwInfo|json}}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+
+        <ion-list *ngIf="appStatus > _AppStatus.SCAN">
+            <ion-item *ngFor="let log of logs">
+                <p>{{log.text}}-{{log.timestamp | date:'HH:MM:ss'}}</p>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

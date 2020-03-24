@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bleemm-c8905": {
+      "hosting": {
+        "app": [
+          "bleemm-c8905"
+        ]
+      }
+    }
+  }
+}

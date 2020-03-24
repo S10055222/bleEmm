@@ -1,0 +1,7 @@
+{
+  "name": "bleEmm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
