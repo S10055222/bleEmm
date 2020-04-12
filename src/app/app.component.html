@@ -10,25 +10,26 @@
             </ion-header>
             <ion-content>
 
+         
 
-                <button onclick="addItem()">add</button>
+            <button onclick="addItem()">add</button>
 
-                <ul>
-                    <li class="text" *ngFor="let item of items | async">
-                        {{item.name}}
-                    </li>
-                </ul>
+            <ul>
+                <li class="text" *ngFor="let item of items | async">
+                    {{item.name}}
+                </li>
+            </ul>
 
-                <ion-list>
-                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-                        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-                            <ion-icon slot="start" [name]="p.icon"></ion-icon>
-                            <ion-label>
-                                {{p.title}}
-                            </ion-label>
-                        </ion-item>
-                    </ion-menu-toggle>
-                </ion-list>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                    <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+                        <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                        <ion-label>
+                            {{p.title}}
+                        </ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
             </ion-content>
         </ion-menu>
         <ion-router-outlet id="main-content"></ion-router-outlet>
