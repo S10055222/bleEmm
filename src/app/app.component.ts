@@ -36,11 +36,21 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
-    // {
-    //   title: 'List',
-    //   url: '/list',
-    //   icon: 'list'
-    // }
+    {
+        title: '打爆你',
+        url: '/home',
+        icon: 'home'
+    },
+    {
+       title: '我愛你',
+       url: '/test',
+       icon: 'test'
+    },
+    {
+        title: '我恨你',
+        url: '/list',
+        icon: 'list'
+    },
   ];
 
     constructor(
