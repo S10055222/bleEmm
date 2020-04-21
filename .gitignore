@@ -31,3 +31,4 @@ npm-debug.log*
 /plugins
 /www
 /.vs/slnx.sqlite
+slnx.sqlite
