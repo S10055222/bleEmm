@@ -11,6 +11,8 @@ export class DeviceInfo {
   rssi: Number;
   timestamp: Date;
   name: string; //Device name == 'emm' 
+   
+
   constructor(x) {
     this.id = x.id;
     this.name = x.name;
