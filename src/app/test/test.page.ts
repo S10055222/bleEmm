@@ -32,17 +32,17 @@ export class TestPage implements OnInit {
     };
 
 
-    // increase() {
-    //    this.value += 2;
-    //    var a = this.value.toString()
-    //    document.getElementById("value").innerHTML = a;
+     increase() {
+        this.value += 2;
+        var a = this.value.toString()
+        document.getElementById("value").innerHTML = a;
 
-    //}
+    }
 
-    //decrease() {
-    //    this.value -= 2;
-    //    var a = this.value.toString()
-    //    document.getElementById("value").innerHTML = a;
+    decrease() {
+        this.value -= 2;
+        var a = this.value.toString()
+        document.getElementById("value").innerHTML = a;
 
-    //}
+    }
 }
