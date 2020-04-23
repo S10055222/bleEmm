@@ -36,11 +36,7 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
-    {
-        title: '打爆你',
-        url: '/home',
-        icon: 'home'
-    },
+ 
     {
        title: '我愛你',
        url: '/test',

@@ -11,6 +11,8 @@ export class DeviceInfo {
   rssi: Number;
   timestamp: Date;
   name: string; //Device name == 'emm' 
+   
+
   constructor(x) {
     this.id = x.id;
     this.name = x.name;
@@ -56,6 +58,10 @@ enum AppStatus {
 })
 export class HomePage implements OnInit {
 
+    pluse = 0;
+    value = 100;
+  
+
   constructor(private platform: Platform, private bleDevice: BLE, private emmService: EmmParserService, private zone: NgZone) { }
 
 
@@ -83,6 +89,21 @@ export class HomePage implements OnInit {
   //Cmd-Queue
   txQ = [];
 
+    ngOnInit() {
+       
+    }
+
+    increase() {
+        this.value += 2;
+        var a = this.value.toString()
+        document.getElementById("value").innerHTML = a;
+    }
+
+    decrease() {
+        this.value -= 2;
+        var a = this.value.toString()
+        document.getElementById("value").innerHTML = a;
+    }
 
   //Interval Dispatcher
   txQDispatcher = null;
@@ -90,8 +111,7 @@ export class HomePage implements OnInit {
   scanBtDispatcher = null;
   //Log
   logs = [];
-  ngOnInit() {
-  }
+
   ionViewWillEnter() {
     this.onAppStatusEvent.subscribe((status: AppStatus) => {
       switch (status) {
@@ -119,6 +139,7 @@ export class HomePage implements OnInit {
               this.recevieData(data);
             });
           }, (err) => { alert('RX or Service Error') });
+
           break;
         case AppStatus.TALKING_TO_SCAN:
           this.appStatus = AppStatus.TALKING_TO_SCAN;
@@ -279,10 +300,26 @@ export class HomePage implements OnInit {
       if (accCmd === null) continue;
       if (typeof accCmd == 'undefined') continue;
 
-      if (accCmd.func <= this.emmService.EMM_COMMANDS.DataIndexEnd) {
+        if (accCmd.func <= this.emmService.EMM_COMMANDS.DataIndexEnd) {
+
         let data = new DataTransformModel(accCmd.x, accCmd.y, accCmd.z);
 
-        this.currentEmmData = data;
+            if (accCmd.x >= 800) {
+                this.pluse += 1;
+                var a = this.value.toString()
+                document.getElementById("pluse").innerHTML = a;
+            }
+            ////////////////////////////////////////////////////////////////////////
+            document.getElementById("value").innerHTML = "100";
+            document.getElementById("pluse").innerHTML = "0";
+            setInterval(() => {
+                this.value += 2;
+                var a = this.value.toString()
+                document.getElementById("value").innerHTML = a;
+            }, 1000);
+            ////////////////////////////////////////////////////////////////////////
+
+            this.currentEmmData = data;
         //})
 
 

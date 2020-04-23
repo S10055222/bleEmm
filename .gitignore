@@ -1,6 +1,7 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+# .vs/slnx.sqlite gitignore
 *~
 *.sw[mnpcod]
 .tmp
@@ -29,4 +30,9 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+<<<<<<< HEAD
 .vs/slnx.sqlite
+=======
+/.vs/slnx.sqlite
+slnx.sqlite
+>>>>>>> 076c6b9f3d64e752359282526f7f9b1446b3994e
