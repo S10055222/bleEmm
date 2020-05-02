@@ -56,8 +56,9 @@
             <ion-item>
                 <button (click)="increase()">Increase</button>
                 <button (click)="decrease()">Decrease</button>
-                <p id="value"></p>
                 <p id="pluse"></p>
+                <p id="qqq"></p>
+
             </ion-item>
 
                 <!--<ion-item>
@@ -67,7 +68,8 @@
                 <!--<ion-item>
                     <p>DeviceName:{{connectedDevice?.id}}</p>
                 </ion-item>-->
-                <!--<ion-item>
+
+        <ion-item>
 
             <ion-segment [(ngModel)]="currentCmdMode" (ionChange)="setMode(currentCmdMode)">
 
@@ -81,11 +83,13 @@
 
             </ion-segment>
 
-        </ion-item>-->
+        </ion-item>
+
                 <!--<ion-item>
             <ion-button (click)="sleepMode()">休眠狀態(Disconnect)</ion-button>
-        </ion-item>-->
-                <!-- <ion-button (click)="DFUMode()">DFU Mode</ion-button> -->
+        </ion-item>
+                 <ion-button (click)="DFUMode()">DFU Mode</ion-button>--> 
+
                 <ion-card>
 
                     <ion-card-content>
@@ -100,13 +104,13 @@
                 </ion-card>
         </div>
 
-        <!--<ion-list *ngIf="appStatus > _AppStatus.SCAN">
+        <ion-list *ngIf="appStatus > _AppStatus.SCAN">
 
             <ion-item *ngFor="let log of logs">
                 <p>{{log.text}}-{{log.timestamp | date:'HH:MM:ss'}}</p>
             </ion-item>
 
-        </ion-list>-->
+        </ion-list>
 
     </div>
 
