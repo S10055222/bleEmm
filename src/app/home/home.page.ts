@@ -59,8 +59,10 @@ enum AppStatus {
 export class HomePage implements OnInit {
 
     pluse = 0;
-    value = 100;
-  
+    qqq = 0;
+    //ionViewDidLoad() {
+    //    console.log(`Ionic觸發ionViewDidLoad`);
+    //}
 
   constructor(private platform: Platform, private bleDevice: BLE, private emmService: EmmParserService, private zone: NgZone) { }
 
@@ -94,15 +96,15 @@ export class HomePage implements OnInit {
     }
 
     increase() {
-        this.value += 2;
-        var a = this.value.toString()
-        document.getElementById("value").innerHTML = a;
+        this.pluse += 2;
+        var a = this.pluse.toString()
+        document.getElementById("pluse").innerHTML = a;
     }
 
     decrease() {
-        this.value -= 2;
-        var a = this.value.toString()
-        document.getElementById("value").innerHTML = a;
+        this.pluse -= 2;
+        var a = this.pluse.toString()
+        document.getElementById("pluse").innerHTML = a;
     }
 
   //Interval Dispatcher
@@ -302,24 +304,25 @@ export class HomePage implements OnInit {
 
         if (accCmd.func <= this.emmService.EMM_COMMANDS.DataIndexEnd) {
 
-        let data = new DataTransformModel(accCmd.x, accCmd.y, accCmd.z);
+            let data = new DataTransformModel(accCmd.x, accCmd.y, accCmd.z);
+
+            this.currentEmmData = data;
 
             if (accCmd.x >= 800) {
                 this.pluse += 1;
-                var a = this.value.toString()
+                var a = this.pluse.toString()
                 document.getElementById("pluse").innerHTML = a;
             }
             ////////////////////////////////////////////////////////////////////////
-            document.getElementById("value").innerHTML = "100";
-            document.getElementById("pluse").innerHTML = "0";
-            setInterval(() => {
-                this.value += 2;
-                var a = this.value.toString()
-                document.getElementById("value").innerHTML = a;
-            }, 1000);
+            //document.getElementById("pluse").innerHTML = "0";
+            //setInterval(() => {
+            //    this.qqq += 2;
+            //    var b = this.qqq.toString()
+            //    document.getElementById("qqq").innerHTML = b;
+            //}, 1000);
             ////////////////////////////////////////////////////////////////////////
 
-            this.currentEmmData = data;
+           
         //})
 
 

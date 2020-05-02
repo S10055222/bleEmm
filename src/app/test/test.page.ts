@@ -13,24 +13,25 @@ export class TestPage implements OnInit {
     firstChange = true;
     lastPrice;
     @Input() price;
+
+   
     ngOnInit() {
        
         document.getElementById("value").innerHTML = "100";
         document.getElementById("pluse").innerHTML = "0";
-        setInterval(() => {
-            this.value += 2;
-            var a = this.value.toString()
-            document.getElementById("value").innerHTML = a;
 
-            this.pluse += 1;
-            var b = this.pluse.toString()
-            document.getElementById("pluse").innerHTML = b;
-        }, 1000);
+        //setInterval(() => {
+        //    this.value += 2;
+        //    var a = this.value.toString()
+        //    document.getElementById("value").innerHTML = a;
+
+        //    this.pluse += 1;
+        //    var b = this.pluse.toString()
+        //    document.getElementById("pluse").innerHTML = b;
+        //}, 1000);
         
 
-
     };
-
 
      increase() {
         this.value += 2;
