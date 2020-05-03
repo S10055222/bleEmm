@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import * as _ from 'lodash';
 import { AppConst } from 'src/AppConst';
 import { EmmParserService } from '../../core/services/emm-parser.service';
+import { EmmDataService } from '../../core/services/emm-data.service';
 
 export class DeviceInfo {
   id: string;
@@ -58,13 +59,20 @@ enum AppStatus {
 })
 export class HomePage implements OnInit {
 
-    pluse = 0;
-    qqq = 0;
+    //pluse = 0;
+ 
     //ionViewDidLoad() {
     //    console.log(`Ionic觸發ionViewDidLoad`);
     //}
 
-  constructor(private platform: Platform, private bleDevice: BLE, private emmService: EmmParserService, private zone: NgZone) { }
+    constructor(
+        private platform: Platform,
+        private bleDevice: BLE,
+        private emmService: EmmParserService,
+        private emmDataService: EmmDataService,
+        private zone: NgZone
+                )
+    { }
 
 
     //APP status
@@ -96,14 +104,14 @@ export class HomePage implements OnInit {
     }
 
     increase() {
-        this.pluse += 2;
-        var a = this.pluse.toString()
+        this.emmDataService.pluse += 2;
+        var a = this.emmDataService.pluse.toString()
         document.getElementById("pluse").innerHTML = a;
     }
 
     decrease() {
-        this.pluse -= 2;
-        var a = this.pluse.toString()
+        this.emmDataService.pluse -= 2;
+        var a = this.emmDataService.pluse.toString()
         document.getElementById("pluse").innerHTML = a;
     }
 
@@ -309,8 +317,8 @@ export class HomePage implements OnInit {
             this.currentEmmData = data;
 
             if (accCmd.x >= 800) {
-                this.pluse += 1;
-                var a = this.pluse.toString()
+                this.emmDataService.pluse += 1;
+                var a = this.emmDataService.pluse.toString()
                 document.getElementById("pluse").innerHTML = a;
             }
             ////////////////////////////////////////////////////////////////////////
