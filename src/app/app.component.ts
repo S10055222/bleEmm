@@ -37,15 +37,15 @@ export class AppComponent {
     },
  
     {
-       title: '我愛你',
+       title: '計步器',
        url: '/test',
        icon: 'test'
     },
-    {
-        title: '我恨你',
-        url: '/list',
-        icon: 'list'
-    },
+    //{
+    //    title: '我恨你',
+    //    url: '/list',
+    //    icon: 'list'
+    //},
   ];
 
     constructor(

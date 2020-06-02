@@ -1,14 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\resources",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\home",
     "\\src\\app\\list",
     "\\src\\app\\test",
-    "\\src\\core",
     "\\src\\core\\services",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\app.component.scss",
+  "SelectedNode": "\\src\\app\\home\\home.module.ts",
   "PreviewInSolutionExplorer": false
 }
