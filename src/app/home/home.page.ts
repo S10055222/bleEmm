@@ -103,17 +103,17 @@ export class HomePage implements OnInit {
        
     }
 
-    increase() {
-        this.emmDataService.pluse += 2;
-        var a = this.emmDataService.pluse.toString()
-        document.getElementById("pluse").innerHTML = a;
-    }
+    //increase() {
+    //    this.emmDataService.pluse += 2;
+    //    var a = this.emmDataService.pluse.toString()
+    //    document.getElementById("pluse").innerHTML = a;
+    //}
 
-    decrease() {
-        this.emmDataService.pluse -= 2;
-        var a = this.emmDataService.pluse.toString()
-        document.getElementById("pluse").innerHTML = a;
-    }
+    //decrease() {
+    //    this.emmDataService.pluse -= 2;
+    //    var a = this.emmDataService.pluse.toString()
+    //    document.getElementById("pluse").innerHTML = a;
+    //}
 
   //Interval Dispatcher
   txQDispatcher = null;
@@ -316,11 +316,24 @@ export class HomePage implements OnInit {
 
             this.currentEmmData = data;
 
-            if (accCmd.x >= 800) {
-                this.emmDataService.pluse += 1;
-                var a = this.emmDataService.pluse.toString()
-                document.getElementById("pluse").innerHTML = a;
+            if ((accCmd.x == -4200) && (accCmd.y == 1200) && (accCmd.z == -6000)) {
+                this.emmDataService.upset = 1;
             }
+
+            if ((accCmd.x == 128) && (accCmd.y == 500) && (accCmd.z == -8000)) {
+                this.emmDataService.downset = 1;
+            }
+
+            if ((this.emmDataService.upset == 1) && (this.emmDataService.downset == 1)) {
+                this.emmDataService.upset = 0;
+                this.emmDataService.downset = 0;
+            }
+            //if (accCmd.x >= 800) {
+            //    this.emmDataService.pluse += 1;
+            //    var a = this.emmDataService.pluse.toString()
+            //    document.getElementById("pluse").innerHTML = a;
+            //}
+
             ////////////////////////////////////////////////////////////////////////
             //document.getElementById("pluse").innerHTML = "0";
             //setInterval(() => {
