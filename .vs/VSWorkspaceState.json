@@ -7,9 +7,8 @@
     "\\src\\app\\home",
     "\\src\\app\\list",
     "\\src\\app\\test",
-    "\\src\\core\\services",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\home\\home.module.ts",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
