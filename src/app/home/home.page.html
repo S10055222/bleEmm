@@ -2,7 +2,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
@@ -53,11 +53,21 @@
 
         <div *ngIf="appStatus ==_AppStatus.TALKING">
 
+<<<<<<< HEAD
             <!--<ion-item>//////////////////////////////////////////////////
                 <button (click)="increase()">Increase</button>
                 <button (click)="decrease()">Decrease</button>
                 <p id="pluse"></p> 
             </ion-item>-->
+=======
+            <ion-item>
+                <button color="dark"(click)="increase()">Increase</button>
+                <button color="dark"(click)="decrease()">Decrease</button>
+                <p id="pluse"></p>
+                
+
+            </ion-item>
+>>>>>>> willy0306
 
                 <!--<ion-item>
                     <p>BorecastName:{{connectedDevice?.name}}</p>
