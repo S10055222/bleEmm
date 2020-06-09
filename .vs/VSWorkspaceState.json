@@ -1,20 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\list",
-    "\\src\\app\\test",
-<<<<<<< HEAD
-    "\\src\\core",
-    "\\src\\core\\services",
-    "\\src\\environments"
+    ""
   ],
-  "SelectedNode": "\\src\\index.html",
-=======
-    "\\src\\environments"
-  ],
-  "SelectedNode": "\\src\\app\\home\\home.page.html",
->>>>>>> 04385b12ff0d9251beb5f4126b45f9f7f90323f1
   "PreviewInSolutionExplorer": false
 }

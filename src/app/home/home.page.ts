@@ -316,7 +316,7 @@ export class HomePage implements OnInit {
 
             this.currentEmmData = data;
 
-            if ( (accCmd.z == -6000) {
+            if ( accCmd.z == -6000) {
                 this.emmDataService.upset = 1;
             }
 
