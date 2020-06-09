@@ -316,11 +316,11 @@ export class HomePage implements OnInit {
 
             this.currentEmmData = data;
 
-            if ((accCmd.x == -4200) && (accCmd.y == 1200) && (accCmd.z == -6000)) {
+            if ( (accCmd.z == -6000) {
                 this.emmDataService.upset = 1;
             }
 
-            if ((accCmd.x == 128) && (accCmd.y == 500) && (accCmd.z == -8000)) {
+            if (accCmd.z == -8000) {
                 this.emmDataService.downset = 1;
             }
 
