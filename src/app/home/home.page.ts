@@ -100,20 +100,21 @@ export class HomePage implements OnInit {
   txQ = [];
 
     ngOnInit() {
+        
        
     }
 
-    //increase() {
-    //    this.emmDataService.pluse += 2;
-    //    var a = this.emmDataService.pluse.toString()
-    //    document.getElementById("pluse").innerHTML = a;
-    //}
+    increase() {
+        this.emmDataService.pluse += 2;
+        var a = this.emmDataService.pluse.toString()
+        document.getElementById("pluse").innerHTML = a;
+    }
 
-    //decrease() {
-    //    this.emmDataService.pluse -= 2;
-    //    var a = this.emmDataService.pluse.toString()
-    //    document.getElementById("pluse").innerHTML = a;
-    //}
+    decrease() {
+        this.emmDataService.pluse -= 2;
+        var a = this.emmDataService.pluse.toString()
+        document.getElementById("pluse").innerHTML = a;
+    }
 
   //Interval Dispatcher
   txQDispatcher = null;
@@ -327,7 +328,11 @@ export class HomePage implements OnInit {
             if ((this.emmDataService.upset == 1) && (this.emmDataService.downset == 1)) {
                 this.emmDataService.upset = 0;
                 this.emmDataService.downset = 0;
+                this.emmDataService.pluse += 1;
+                var a = this.emmDataService.pluse.toString()
+                 document.getElementById("pluse").innerHTML = a;
             }
+
             //if (accCmd.x >= 800) {
             //    this.emmDataService.pluse += 1;
             //    var a = this.emmDataService.pluse.toString()
@@ -337,9 +342,9 @@ export class HomePage implements OnInit {
             ////////////////////////////////////////////////////////////////////////
             //document.getElementById("pluse").innerHTML = "0";
             //setInterval(() => {
-            //    this.qqq += 2;
-            //    var b = this.qqq.toString()
-            //    document.getElementById("qqq").innerHTML = b;
+            //    this.emmDataService.pluse += 2;
+            //    var b = this.emmDataService.pluse.toString()
+            //    document.getElementById("pluse").innerHTML = b;
             //}, 1000);
             ////////////////////////////////////////////////////////////////////////
 

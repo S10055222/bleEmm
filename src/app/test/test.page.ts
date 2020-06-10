@@ -18,8 +18,8 @@ export class TestPage implements OnInit {
 
     ngOnInit() {
 
-        document.getElementById("value").innerHTML = this.emmDataService.value;
-        document.getElementById("pluse").innerHTML = "0";
+        //document.getElementById("value").innerHTML = this.emmDataService.value;
+        //document.getElementById("pluse").innerHTML = "0";
 
         //setInterval(() => {
         //    this.emmDataService.value += 2;

@@ -40,7 +40,7 @@ export class AppComponent {
     //   title: '計步器',
     //   url: '/test',
     //   icon: 'test'
-    //},
+    //}
     //{
     //    title: '我恨你',
     //    url: '/list',

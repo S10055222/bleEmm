@@ -20,7 +20,7 @@
     <div class="ion-padding">
 
         <ion-list *ngIf="appStatus == _AppStatus.SCAN">
-           
+
 
             <ion-list-header>
                 <ion-label>EMM BLE Deveice List</ion-label>
@@ -55,7 +55,8 @@
         <div *ngIf="appStatus ==_AppStatus.TALKING">
 
             <ion-item>
-               
+                <p>當前步數 &nbsp;</p>
+                 
                 <p id="pluse"></p>
 
 
@@ -74,11 +75,11 @@
                 <ion-segment [(ngModel)]="currentCmdMode" (ionChange)="setMode(currentCmdMode)">
 
                     <ion-segment-button value="0" checked>
-                        ch
+                        
                         <ion-label>待機模式</ion-label>
                     </ion-segment-button>
 
-                    on
+                    
 
                     <ion-segment-button value="100">
                         <ion-label>傳輸數據模式(100ms)</ion-label>
