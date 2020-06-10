@@ -104,17 +104,17 @@ export class HomePage implements OnInit {
        
     }
 
-    increase() {
-        this.emmDataService.pluse += 2;
-        var a = this.emmDataService.pluse.toString()
-        document.getElementById("pluse").innerHTML = a;
-    }
+    //increase() {
+    //    this.emmDataService.pluse += 2;
+    //    var a = this.emmDataService.pluse.toString()
+    //    document.getElementById("pluse").innerHTML = a;
+    //}
 
-    decrease() {
-        this.emmDataService.pluse -= 2;
-        var a = this.emmDataService.pluse.toString()
-        document.getElementById("pluse").innerHTML = a;
-    }
+    //decrease() {
+    //    this.emmDataService.pluse -= 2;
+    //    var a = this.emmDataService.pluse.toString()
+    //    document.getElementById("pluse").innerHTML = a;
+    //}
 
   //Interval Dispatcher
   txQDispatcher = null;
