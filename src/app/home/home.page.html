@@ -19,7 +19,8 @@
 
     <div class="ion-padding">
 
-        <ion-list *ngIf="appStatus ==_AppStatus.TALKING">
+        <ion-list *ngIf="appStatus == _AppStatus.SCAN">
+           
 
             <ion-list-header>
                 <ion-label>EMM BLE Deveice List</ion-label>
@@ -51,7 +52,7 @@
         </div>
 
 
-        <div *ngIf="appStatus == _AppStatus.SCAN">
+        <div *ngIf="appStatus ==_AppStatus.TALKING">
 
 
 
